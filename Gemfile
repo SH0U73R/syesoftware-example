@@ -47,3 +47,8 @@ group :development, :test do
   gem 'guard-rails', '0.7.1'
 end
 
+gem 'puma'
+
+group :production do
+  gem 'rails_12factor'
+end
