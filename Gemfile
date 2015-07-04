@@ -18,6 +18,7 @@ group :development, :test do
   gem 'spring'
   gem 'rspec-rails', '3.3.2'
   gem 'guard-rspec', '4.6.0', require: false
+  gem 'shoulda-matchers'
 end
 
 group :production do
