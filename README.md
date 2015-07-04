@@ -10,3 +10,14 @@ Checkout the project
 $ git clone git@github.com:alejandrogutierrez/syesoftware-example.git
 $ cd syesoftware-example
 ```
+
+Fifa tournament
+
+  CRUD for players
+    -Name
+    -email
+
+  CRUD for tournaments
+    -Start date
+    -Name
+    -End date
