@@ -1,3 +1,10 @@
 language: ruby
 rvm:
   - "2.2.2"
+before_script:
+  - psql -c 'create database syesoftware_test;' -U postgres
+  - "cp ./config/database.yml.example ./config/database.yml"
+script:
+  - bundle exec rake db:schema:load
+  - bundle exec rake db:test:prepare
+  - bundle exec rake
