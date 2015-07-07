@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Start date:
+  = @tournament.start_date
+%p
+  %b Name:
+  = @tournament.name
+%p
+  %b End date:
+  = @tournament.end_date
+
+= link_to 'Edit', edit_tournament_path(@tournament)
+\|
+= link_to 'Back', tournaments_path
