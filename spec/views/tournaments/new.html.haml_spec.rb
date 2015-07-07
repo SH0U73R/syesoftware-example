@@ -4,8 +4,8 @@ RSpec.describe "tournaments/new", type: :view do
   before(:each) do
     assign(:tournament, Tournament.new(
       :name => "Fifa 2015",
-      :start_date => "07/07/2015",
-      :end_date => "07/07/2015"
+      :start_date => Date.today,
+      :end_date => Date.today
     ))
   end
 

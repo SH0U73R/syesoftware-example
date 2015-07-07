@@ -24,13 +24,19 @@ RSpec.describe TournamentsController, type: :controller do
   # Tournament. As you add validations to Tournament, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
-        { start_date: "07/07/2015", name: "Fifa 2015 Tournament", 
-      end_date: "07/07/2015" }
+        { 
+          start_date: Date.today, 
+          name: "Fifa 2015 Tournament", 
+          end_date: Date.today 
+        }
   }
 
   let(:invalid_attributes) {
-    { start_date: "", name: "", 
-      end_date: "" }
+    { 
+      start_date: "",
+      name: "",
+      end_date: "" 
+    }
   }
 
   # This should return the minimal set of values that should be in the session
@@ -105,15 +111,20 @@ RSpec.describe TournamentsController, type: :controller do
   describe "PUT #update" do
     context "with valid params" do
       let(:new_attributes) {
-        { start_date: "08/07/2015", name: "PES 2015", 
-          end_date: "08/07/2015"}
+        { 
+          start_date: Date.today,
+          name: "PES 2015",
+          end_date: Date.today
+        }
       }
 
       it "updates the requested tournament" do
         tournament = Tournament.create! valid_attributes
         put :update, {:id => tournament.to_param, :tournament => new_attributes}, valid_session
         tournament.reload
-        # ("Add assertions for updated state")
+        expect(tournament.name).to eql('PES 2015')
+        expect(tournament.end_date).to eql(Date.today)
+        expect(tournament.start_date).to eql(Date.today)        
       end
 
       it "assigns the requested tournament as @tournament" do
